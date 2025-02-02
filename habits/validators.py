@@ -37,6 +37,6 @@ class CheckPeriodicity:
     """Проверка, чтто периодичность привычки не может быть меньше одного раза в неделю"""
 
     def __call__(self, value):
-        periodicity = dict(value).get("sign_pleasant_habit")
+        periodicity = dict(value).get("periodicity")
         if periodicity == 0:
             raise serializers.ValidationError("Периодичность не может быть меньше одного раза в неделю")
