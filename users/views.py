@@ -33,4 +33,3 @@ class UserDeleteAPIView(generics.DestroyAPIView):
 class UserRetrieveAPIView(generics.RetrieveAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
-

@@ -16,6 +16,13 @@ django = "^5.1.5"
 psycopg2-binary = "^2.9.10"
 djangorestframework-simplejwt = "^5.4.0"
 djangorestframework = "^3.15.2"
+celery = "^5.4.0"
+eventlet = "^0.39.0"
+redis = "^5.2.1"
+django-celery-beat = "^2.7.0"
+requests = "^2.32.3"
+django-cors-headers = "^4.6.0"
+drf-yasg = "^1.21.8"
 
 
 [build-system]
