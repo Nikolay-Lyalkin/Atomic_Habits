@@ -1,16 +1,11 @@
-from django.shortcuts import render
 from rest_framework import generics
 from rest_framework.permissions import IsAuthenticated
 
 from habits.models import Habit, PleasantHabit
 from habits.paginators import PaginationHabits
 from habits.permissions import IsOwner
-from habits.serializers import (
-    HabitSerializer,
-    HabitCreateSerializer,
-    PleasantHabitSerializer,
-    PleasantHabitCreateSerializer,
-)
+from habits.serializers import (HabitCreateSerializer, HabitSerializer, PleasantHabitCreateSerializer,
+                                PleasantHabitSerializer)
 
 
 class HabitListAPIView(generics.ListAPIView):
