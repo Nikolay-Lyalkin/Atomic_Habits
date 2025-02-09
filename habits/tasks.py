@@ -15,8 +15,8 @@ def remind_of_habit_with_time():
         if habit.user.tg_chat_id:
             time_difference = habit.time.hour - time_now
             if time_difference == 1:
-                message = (f"До вашей полезной привычки '{habit.action}' осталось совсем немного времени, начало \
-                 в {habit.time}. Вам необходимо сделать это не меньше {habit.periodicity} раз в неделю.")
+                message = f"До вашей полезной привычки '{habit.action}' осталось совсем немного времени, начало \
+                 в {habit.time}. Вам необходимо сделать это не меньше {habit.periodicity} раз в неделю."
                 send_telegram_message(habit.user.tg_chat_id, message)
 
 
@@ -26,6 +26,6 @@ def remind_of_habit_without_time():
 
     for habit in habits:
         if habit.user.tg_chat_id:
-            message = (f"Если Вы выполнили привычку -'{habit.action}' меньше {habit.periodicity} раз(раза) в неделю, \
-             сделай это сегодня!")
+            message = f"Если Вы выполнили привычку -'{habit.action}' меньше {habit.periodicity} раз(раза) в неделю, \
+             сделай это сегодня!"
             send_telegram_message(habit.user.tg_chat_id, message)

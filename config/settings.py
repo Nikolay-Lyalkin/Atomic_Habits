@@ -10,10 +10,11 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
+import os
 from datetime import timedelta
 from pathlib import Path
+
 from dotenv import load_dotenv
-import os
 
 load_dotenv()
 
@@ -40,7 +41,6 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-
     "drf_yasg",
     "corsheaders",
     "rest_framework",
@@ -58,8 +58,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
-
-    'corsheaders.middleware.CorsMiddleware',
+    "corsheaders.middleware.CorsMiddleware",
 ]
 
 ROOT_URLCONF = "config.urls"
@@ -158,12 +157,12 @@ CELERY_BROKER_URL = "redis://127.0.0.1:6379/0"  # Например, Redis, ко�
 CELERY_RESULT_BACKEND = "redis://127.0.0.1:6379/0"
 
 CORS_ALLOWED_ORIGINS = [
-    'http://localhost:8000',  # Замените на адрес вашего фронтенд-сервера
+    "http://localhost:8000",  # Замените на адрес вашего фронтенд-сервера
 ]
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://read-and-write.example.com', #  Замените на адрес вашего фронтенд-сервера
-    'http://localhost:8000'# и добавьте адрес бэкенд-сервера
+    "https://read-and-write.example.com",  # Замените на адрес вашего фронтенд-сервера
+    "http://localhost:8000",  # и добавьте адрес бэкенд-сервера
 ]
 
 CORS_ALLOW_ALL_ORIGINS = False
