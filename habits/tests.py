@@ -23,7 +23,7 @@ class HabitTestCase(APITestCase):
         self.assertEquals(
             response.json(),
             {
-                "id": 3,
+                "id": 2,
                 "place": None,
                 "time": "08:00:00",
                 "action": "Утренняя растяжка",
@@ -31,7 +31,7 @@ class HabitTestCase(APITestCase):
                 "award": "Пирожное Rex",
                 "time_to_complete": None,
                 "sign_publicity": None,
-                "user": 2,
+                "user": 1,
                 "good_habit": None,
             },
         )
@@ -50,7 +50,7 @@ class HabitTestCase(APITestCase):
                 "previous": None,
                 "results": [
                     {
-                        "id": 4,
+                        "id": 1,
                         "place": None,
                         "time": "20:00:00",
                         "action": "Вечерняя прогулка",
@@ -58,7 +58,7 @@ class HabitTestCase(APITestCase):
                         "award": "Фруктовая тарелка",
                         "time_to_complete": None,
                         "sign_publicity": False,
-                        "user": 3,
+                        "user": 1,
                         "good_habit": None,
                     }
                 ],
@@ -75,13 +75,13 @@ class HabitTestCase(APITestCase):
 
         data = {"action": "Вечерняя пробежка"}
 
-        response = self.client.put("/habit/5/update/", data=data)
+        response = self.client.put("/habit/1/update/", data=data)
 
         self.assertEquals(response.status_code, status.HTTP_200_OK)
         self.assertEquals(
             response.json(),
             {
-                "id": 5,
+                "id": 1,
                 "place": None,
                 "time": "20:00:00",
                 "action": "Вечерняя пробежка",
@@ -89,7 +89,7 @@ class HabitTestCase(APITestCase):
                 "award": "Фруктовая тарелка",
                 "time_to_complete": None,
                 "sign_publicity": None,
-                "user": 4,
+                "user": 1,
                 "good_habit": None,
             },
         )
@@ -126,13 +126,13 @@ class PleasantHabitTestCase(APITestCase):
         self.assertEquals(
             response.json(),
             {
-                "id": 3,
+                "id": 2,
                 "place": "Шоколадница",
                 "time": None,
                 "action": "Утренний кофе",
                 "sign_pleasant_habit": True,
                 "sign_publicity": False,
-                "user": 6,
+                "user": 1,
             },
         )
         self.assertTrue(PleasantHabit.objects.all().exists())
@@ -156,7 +156,7 @@ class PleasantHabitTestCase(APITestCase):
                         "action": "Поход в Grammy",
                         "sign_pleasant_habit": True,
                         "sign_publicity": False,
-                        "user": 5,
+                        "user": 1,
                     }
                 ],
             },

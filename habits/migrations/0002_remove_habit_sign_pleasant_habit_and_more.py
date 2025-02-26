@@ -26,9 +26,9 @@ class Migration(migrations.Migration):
             name="PleasantHabit",
             fields=[
                 ("id", models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name="ID")),
-                ("place", models.CharField(blank=True, null=True, verbose_name="Место")),
+                ("place", models.CharField(blank=True, null=True, verbose_name="Место", max_length=250)),
                 ("time", models.TimeField(blank=True, null=True, verbose_name="Время")),
-                ("action", models.CharField(verbose_name="Действие")),
+                ("action", models.CharField(verbose_name="Действие", max_length=1000)),
                 ("sign_pleasant_habit", models.BooleanField(default=True, verbose_name="Признак приятной привычки")),
                 ("sign_publicity", models.BooleanField(default=False, verbose_name="Публикация в общий доступ")),
                 (
