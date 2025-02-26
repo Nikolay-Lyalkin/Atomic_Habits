@@ -18,19 +18,28 @@ class Migration(migrations.Migration):
             name="Habit",
             fields=[
                 ("id", models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name="ID")),
-                ("place", models.CharField(blank=True, null=True, verbose_name="Место")),
+                ("place", models.CharField(blank=True, null=True, verbose_name="Место", max_length=250)),
                 ("time", models.TimeField(blank=True, null=True, verbose_name="Время")),
-                ("action", models.CharField(verbose_name="Действие")),
+                ("action", models.CharField(verbose_name="Действие", max_length=1000)),
                 (
                     "sign_pleasant_habit",
                     models.BooleanField(
-                        blank=True, default=False, null=True, verbose_name="Признак приятной привычки"
+                        blank=True, default=False, null=True, verbose_name="Признак приятной привычки", max_length=1000
                     ),
                 ),
-                ("good_habit", models.CharField(blank=True, null=True, verbose_name="Приятная привычка")),
-                ("periodicity", models.CharField(blank=True, null=True, verbose_name="Периодичность")),
-                ("award", models.CharField(blank=True, null=True, verbose_name="Вознаграждение")),
-                ("time_to_complete", models.CharField(blank=True, null=True, verbose_name="Время на выполнение")),
+                (
+                    "good_habit",
+                    models.CharField(blank=True, null=True, verbose_name="Приятная привычка", max_length=1000),
+                ),
+                (
+                    "periodicity",
+                    models.CharField(blank=True, null=True, verbose_name="Периодичность", max_length=1000),
+                ),
+                ("award", models.CharField(blank=True, null=True, verbose_name="Вознаграждение", max_length=1000)),
+                (
+                    "time_to_complete",
+                    models.CharField(blank=True, null=True, verbose_name="Время на выполнение", max_length=1000),
+                ),
                 (
                     "sign_publicity",
                     models.BooleanField(
