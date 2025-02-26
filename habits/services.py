@@ -13,3 +13,4 @@ def send_telegram_message(chat_id, message):
     chat_id = chat_id
     message = message
     response = requests.get(f"{url}/bot{TOKEN}/sendMessage?chat_id={chat_id}&text={message}")
+    return response

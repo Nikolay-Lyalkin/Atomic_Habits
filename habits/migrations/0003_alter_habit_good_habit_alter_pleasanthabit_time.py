@@ -26,6 +26,6 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name="pleasanthabit",
             name="time",
-            field=models.CharField(blank=True, null=True, verbose_name="Время"),
+            field=models.CharField(blank=True, null=True, verbose_name="Время", max_length=1000),
         ),
     ]

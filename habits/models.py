@@ -12,9 +12,9 @@ class PleasantHabit(models.Model):
         related_name="user_pleasant_habit",
         verbose_name="пользователь",
     )
-    place = models.CharField(verbose_name="Место", blank=True, null=True)
-    time = models.CharField(verbose_name="Время", blank=True, null=True)
-    action = models.CharField(verbose_name="Действие")
+    place = models.CharField(verbose_name="Место", blank=True, null=True, max_length=250)
+    time = models.CharField(verbose_name="Время", blank=True, null=True, max_length=1000)
+    action = models.CharField(verbose_name="Действие", max_length=1000)
     sign_pleasant_habit = models.BooleanField(verbose_name="Признак приятной привычки", default=True)
     sign_publicity = models.BooleanField(verbose_name="Публикация в общий доступ", default=False)
 
@@ -36,9 +36,9 @@ class Habit(models.Model):
         related_name="user_habit",
         verbose_name="пользователь",
     )
-    place = models.CharField(verbose_name="Место", blank=True, null=True)
-    time = models.TimeField(verbose_name="Время", default="12:00", blank=True, null=True)
-    action = models.CharField(verbose_name="Действие")
+    place = models.CharField(verbose_name="Место", blank=True, null=True, max_length=250)
+    time = models.TimeField(verbose_name="Время", default="12:00", blank=True, null=True, max_length=1000)
+    action = models.CharField(verbose_name="Действие", max_length=1000)
     good_habit = models.ForeignKey(
         PleasantHabit,
         verbose_name="Приятная привычка",
@@ -48,7 +48,7 @@ class Habit(models.Model):
         related_name="pleasant_habit",
     )
     periodicity = models.PositiveIntegerField(verbose_name="Периодичность в неделю", default=1, blank=True, null=True)
-    award = models.CharField(verbose_name="Вознаграждение", blank=True, null=True)
+    award = models.CharField(verbose_name="Вознаграждение", blank=True, null=True, max_length=1000)
     time_to_complete = models.PositiveIntegerField(
         verbose_name="Время на выполнение в секундах", blank=True, null=True
     )

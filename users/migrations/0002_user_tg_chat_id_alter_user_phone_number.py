@@ -13,11 +13,13 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name="user",
             name="tg_chat_id",
-            field=models.CharField(blank=True, null=True, unique=True, verbose_name="Телеграмм chat-id"),
+            field=models.CharField(
+                blank=True, null=True, unique=True, verbose_name="Телеграмм chat-id", max_length=100
+            ),
         ),
         migrations.AlterField(
             model_name="user",
             name="phone_number",
-            field=models.CharField(blank=True, null=True, verbose_name="Номер телефона"),
+            field=models.CharField(blank=True, null=True, verbose_name="Номер телефона", max_length=20),
         ),
     ]
