@@ -14,7 +14,7 @@ services:
     depends_on:
       - db
     env_file:
-      - "./.env"
+      - .env
 
   db:
     image: postgres:16
@@ -22,7 +22,7 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data
     env_file:
-      - "./.env"
+      - .env
 
   celery:
     container_name: celery_atomic_habits
